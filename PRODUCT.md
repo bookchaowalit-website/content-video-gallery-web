@@ -1,60 +1,24 @@
-# bookchaowalit-video-gallery-frontend — Product brief
+# Video gallery (screening room) — Product truth
 
-**Slug:** `bookchaowalit-website/bookchaowalit-video-gallery-frontend`  
-**Generated:** 2026-08-11 (bulk Book Dev closeout)  
-**Status:** starter / portfolio boundary
+> Inferred from the code and copy (no user interview). Checked against the portfolio card claims review
+> (`portfolio-site-web/docs/audits/CARD-CLAIMS-REVIEW-2026-10.md`, row `video-gallery`) on 2026-10-23.
 
-## Purpose
+## What it is
 
-Portfolio repository under Book Dev. This brief records ownership and the
-current honest status so the nested tree is not an empty shell in the task
-system.
+A static page with one hard-coded catalog card, a search box and category tabs. No media is stored, embedded or
+played.
 
-## Runnable path
+## Recommendation: archive
 
-See `README.md` for install and run instructions when present.
+- The whole catalog is one card in `app/page.tsx`; the "Talk" tab is always empty; there are no media assets.
+- The card's earlier claims (embedded YouTube/Vimeo/MP4 players, playlists, related links) do not exist.
+- Same shape as `content-photo-web` (one hard-coded entry), which is also recommended for archive.
+- Owner decision: archive the repository and retire the `video-gallery` card, or keep it and invest in a real
+  catalog. Until then it is kept at L1 (patched Next, lint on, shared CI green) without tests or Sentry.
 
-## Limits
+## Live URL and deploy state
 
-- Not claimed as production-ready unless README and tests prove it.
-- Mobile smoke / emulator acceptance is separate and toolchain-dependent.
-
-<!-- impeccable:product-schema 1 -->
-
-## Platform
-
-web
-
-## Current product truth
-
-Inferred from the existing UI and README; user confirmation pending. This is a
-local catalog of static demo video entries with search and category filtering.
-It does not prove that media files are hosted, playable, watched, or backed by
-a multi-user library. Keep the collection honest and make browsing the useful
-action.
-
-## Source README excerpt
-
-```
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize an
-```
+- Live: https://video-gallery.bookchaowalit.com (HTTP 200 on 2026-10-23).
+- Vercel project `bookchaowalit-video-gallery-frontend`, deployed only by CLI; last production deploy is the CVE
+  patch (2026-10-23, CLI, commit 8208664). Its Git link names the old repository
+  `bookchaowalit/bookchaowalit-video-gallery-frontend`, so a push to `main` does not deploy (owner action D9 if kept).
